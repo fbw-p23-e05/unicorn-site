@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fancier CSS</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        display: grid;
+        place-items: center;
+        background-color: #22333b;
+        color: #e4c1f9;
+        font-size: 24px;
+      }
+      div {
+        text-align: center;
+        color: blue;
+      }
+
+      #backend {
+        scale: -1;
+        color: greenyellow;
+      }
+
+      @keyframes rotate {
+        0% {
+          rotate: 0deg;
+        }
+        50% {
+          rotate: 180deg;
+        }
+        100% {
+          rotate: 360deg;
+        }
+      }
+
+      /**
+ * ----------------------------------------
+ * animation rotate-scale-up
+ * ----------------------------------------
+ */
+      @-webkit-keyframes rotate-scale-up {
+        0% {
+          -webkit-transform: scale(1) rotateZ(0);
+          transform: scale(1) rotateZ(0);
+        }
+        50% {
+          -webkit-transform: scale(2) rotateZ(180deg);
+          transform: scale(2) rotateZ(180deg);
+        }
+        100% {
+          -webkit-transform: scale(1) rotateZ(360deg);
+          transform: scale(1) rotateZ(360deg);
+        }
+      }
+      @keyframes rotate-scale-up {
+        0% {
+          -webkit-transform: scale(1) rotateZ(0);
+          transform: scale(1) rotateZ(0);
+        }
+        50% {
+          -webkit-transform: scale(2) rotateZ(180deg);
+          transform: scale(2) rotateZ(180deg);
+        }
+        100% {
+          -webkit-transform: scale(1) rotateZ(360deg);
+          transform: scale(1) rotateZ(360deg);
+        }
+      }
+      .rotate-scale-up {
+        -webkit-animation: rotate-scale-up 0.65s linear both;
+        animation: rotate-scale-up 0.65s linear both;
+      }
+
+      main {
+        animation: rotate 10s infinite;
+      }
+      .original-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 18px;
+        border-radius: 5px;
+        width: 100px;
+        height: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+        background-color: #2988e0;
+      }
+
+      .original-button:hover {
+        opacity: 0.7;
+      }
+
+      .neumorphic {
+        border-radius: 10px;
+        background: #dd7fea;
+        box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #c8c7c7;
+      }
+      .red-text {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- https://emojipedia.org/search/?q=unicorn -->
+    <main>
+      <div class="neumorphic">Frontend</div>
+      <div class="rotate-scale-up">🦄</div>
+      <button class="original-button">Button</button>
+      <div id="backend" class="red-text">Backend</div>
+      <div class="red-text neumorphic">More text</div>
+    </main>
+
+    <!-- <button class="original-button">Button</button> -->
+  </body>
+</html>
